@@ -17,6 +17,7 @@ class App extends Component {
   onChangeQuery = query => {
     this.setState({
       query,
+      // query: '',
       page: 1,
       gallery: [],
     });

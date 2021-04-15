@@ -9,15 +9,15 @@ axios.defaults.params = {
   image_type: 'photo',
   orientation: 'horizontal',
   per_page: 12,
-}
+};
 
-const getImagesData = async ({ query, page }) => {
+const getImagesData = async (query, page) => {
   try {
-    const data = await axios.get('', { params: { query, page }, });
-    return data;
+    const response = await axios.get(`?q=${query}&page=${page}`);
+    return response;
   }
   catch (error) {
-    console.log('Error', { error });
+    console.log('error :', { error });
     return [];
   }
 };
