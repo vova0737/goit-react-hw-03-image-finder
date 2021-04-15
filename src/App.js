@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Searchbar from './components/Searchbar';
-import get from './Services/Pixabay-api';
+import getImagesData from './Services/Pixabay-api';
 import ImageGallery from './components/ImageGallery';
 import Button from './components/Button';
 import Spinner from './components/Spinner';
@@ -25,7 +25,7 @@ class App extends Component {
   fetchRequest = async () => {
     try {
       const { query, page } = this.state;
-      const response = await get(query, page);
+      const response = await getImagesData(query, page);
       return response.data.hits;
     } catch (error) {
       this.setState({
